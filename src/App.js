@@ -6,6 +6,7 @@ import NotFound from "./components/NotFound/NotFound";
 import Create from "./components/Create/Create";
 import { UserProvider } from "./components/UserContext/UserContext";
 import Delete from "./components/Delete/Delete";
+import Edit from "./components/Edit/Edit";
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
             <Route path="/read/:id">
               <Read />
             </Route>
-            <Route path="/edit">
-              <Home />
+            <Route path="/edit/:id">
+              <Edit />
             </Route>
             <Route path="/delete/:id">
               <Delete />

@@ -38,9 +38,11 @@ const Home = () => {
                     Read
                   </Button>
                 </Link>
+                <Link to={"/edit/"+user.id}>
                 <Button className="action__btn" variant="info">
                   Edit
                 </Button>
+                </Link>
                 <Link to={"/delete/"+user.id}>
                 <Button className="action__btn" variant="danger">
                   Delete

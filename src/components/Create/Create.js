@@ -14,6 +14,7 @@ const Create = () => {
 
   const updateId = (e) => {
     setId(e.target.value);
+    console.log(id)
   };
 
   const updateName = (e) => {

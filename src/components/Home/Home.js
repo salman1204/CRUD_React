@@ -1,19 +1,22 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "./Home.css";
 import { Button, Table } from "react-bootstrap";
 import Read from "../Read/Read";
 import { Link } from "react-router-dom";
+import { UserContext } from "../UserContext/UserContext";
 
 const Home = () => {
-  const [items, setItems] = useState([
-    { id: 1, name: "Salman", position: "Front End Dev", salary: 28000 },
-    { id: 2, name: "Shuvo", position: "Data Scientist", salary: 26000 },
-    { id: 3, name: "Mahadi", position: "Full Stack Dev", salary: 27000 },
-  ]);
-
+  const [users, setUser] = useContext(UserContext);
+    const passProps = (user) => {
+        console.log(user);
+    }
   return (
     <div>
-      <Link to="/create"><Button className="create__btn" variant="primary">Create Item</Button></Link>
+      <Link to="/create">
+        <Button className="create__btn" variant="primary">
+          Create User
+        </Button>
+      </Link>
 
       <Table striped bordered>
         <thead>
@@ -26,16 +29,24 @@ const Home = () => {
           </tr>
         </thead>
         <tbody>
-          {items.map((item) => (
+          {users.map((user) => (
             <tr>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td>{item.position}</td>
-              <td>{item.salary}</td>
+              <td>{user.id}</td>
+              <td>{user.name}</td>
+              <td>{user.position}</td>
+              <td>{user.salary}</td>
               <td>
-                <Link to="/read"><Button className="action__btn" variant="success">Read</Button></Link>
-                <Button className="action__btn" variant="info">Edit</Button>
-                <Button className="action__btn" variant="danger">Delete</Button>
+                <Link to="/read/">
+                  <Button onClick={()=> passProps(user)} className="action__btn" variant="success">
+                    Read
+                  </Button>
+                </Link>
+                <Button className="action__btn" variant="info">
+                  Edit
+                </Button>
+                <Button className="action__btn" variant="danger">
+                  Delete
+                </Button>
               </td>
             </tr>
           ))}

@@ -18,7 +18,7 @@ const Home = () => {
       <Table striped bordered>
         <thead>
           <tr>
-            <th>id</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Position</th>
             <th>Salary</th>
@@ -41,9 +41,11 @@ const Home = () => {
                 <Button className="action__btn" variant="info">
                   Edit
                 </Button>
+                <Link to={"/delete/"+user.id}>
                 <Button className="action__btn" variant="danger">
                   Delete
                 </Button>
+                </Link>
               </td>
             </tr>
           ))}

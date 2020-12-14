@@ -5,11 +5,12 @@ import Read from "./components/Read/Read";
 import NotFound from "./components/NotFound/NotFound";
 import Create from "./components/Create/Create";
 import { UserProvider } from "./components/UserContext/UserContext";
+import Delete from "./components/Delete/Delete";
 
 function App() {
   return (
     <UserProvider> 
-      <>
+      <div className="app">
         <Router>
           <Switch>
             <Route path="/create">
@@ -21,8 +22,8 @@ function App() {
             <Route path="/edit">
               <Home />
             </Route>
-            <Route path="/delete">
-              <Home />
+            <Route path="/delete/:id">
+              <Delete />
             </Route>
             <Route exact path="/">
               <Home />
@@ -32,7 +33,7 @@ function App() {
             </Route>
           </Switch>
         </Router>
-      </>
+      </div>
     </UserProvider>
   );
 }

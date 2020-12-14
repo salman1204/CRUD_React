@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
 import "./Home.css";
 import { Button, Table } from "react-bootstrap";
-import Read from "../Read/Read";
 import { Link } from "react-router-dom";
 import { UserContext } from "../UserContext/UserContext";
 
 const Home = () => {
   const [users, setUser] = useContext(UserContext);
-    const passProps = (user) => {
-        console.log(user);
-    }
+
   return (
     <div>
       <Link to="/create">
@@ -36,8 +33,8 @@ const Home = () => {
               <td>{user.position}</td>
               <td>{user.salary}</td>
               <td>
-                <Link to="/read/">
-                  <Button onClick={()=> passProps(user)} className="action__btn" variant="success">
+                <Link to={"/read/"+user.id}>
+                  <Button className="action__btn" variant="success">
                     Read
                   </Button>
                 </Link>

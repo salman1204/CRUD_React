@@ -1,0 +1,12 @@
+.read {
+  background-color: bisque;
+  max-width: 50%;
+  margin: auto;
+  padding: 5%;
+  border: 2px solid goldenrod;
+  border-radius: 5px;
+  position: absolute;
+  top: 20%;
+  left: 27%;
+}
+
